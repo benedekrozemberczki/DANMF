@@ -28,7 +28,6 @@ class DANMF(object):
         U = nmf_model.fit_transform(self.Z)
         V = nmf_model.components_
         return U, V
-      
 
     def general_pretrain(self,i):
         nmf_model = ShallowNMF(X = self.Z, dimensions = self.args.layers[i], iterations = self.args.pre_iterations)
@@ -54,7 +53,6 @@ class DANMF(object):
         for i in range(self.p-1,-1,-1):
             self.Q_s[i] = np.dot(self.U_s[i], self.Q_s[i+1])
    
-
     def update_U(self,i):
         if i==0:
             R = self.U_s[0].dot(self.Q_s[1].dot(self.VpVpT).dot(self.Q_s[1].T))+self.A_sq.dot(self.U_s[0].dot(self.Q_s[1].dot(self.Q_s[1].T)))
@@ -105,7 +103,7 @@ class DANMF(object):
         print('\n\nTraining started. \n')
         self.loss = []
         self.A_sq = self.A.dot(self.A.T)
-        for iteration in tqdm(range(self.args.iterations),desc='Training pass: ', leave = True):
+        for iteration in tqdm(range(self.args.iterations), desc='Training pass: ', leave = True):
             self.setup_Q()
             self.VpVpT = self.V_s[self.p-1].dot(self.V_s[self.p-1].T)
             for i in range(self.p):
@@ -116,4 +114,3 @@ class DANMF(object):
                 self.calculate_cost(iteration)
         self.save_membership()
         self.save_embedding()
-
