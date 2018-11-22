@@ -6,10 +6,10 @@ A sparsity aware implementation of "Deep Autoencoder-like Nonnegative Matrix Fac
 
 This repository provides an implementation for DANMF as described in the paper:
 
-> Binarized Attributed Network Embedding.
-> YHong Yang, Shirui Pan, Peng Zhang, Ling Chen, Defu Lian, and Chengqi Zhang.
-> ICDM, 2018.
-> [[Paper]](https://www.researchgate.net/publication/328688614_Binarized_Attributed_Network_Embedding)
+> Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection.
+> Fanghua Ye, Chuan Chen, and Zibin Zheng.
+> CIKM, 2018.
+> [[Paper]](https://smartyfh.com/Documents/18DANMF.pdf)
 
 
 ### Requirements
