@@ -32,13 +32,13 @@ def parameter_parser():
 
     parser.add_argument('--iterations',
                         type = int,
-                        default = 10,
-	                help = 'Number of power iterations. Default is 10.')
+                        default = 100,
+	                help = 'Number of training iterations. Default is 100.')
 
     parser.add_argument('--pre-iterations',
                         type = int,
                         default = 100,
-	                help = 'Number of CDC rounds. Default is 5.')
+	                help = 'Number of layerwsie pre-training iterations. Default is 100.')
 
     parser.add_argument('--seed',
                         type = int,
@@ -48,7 +48,7 @@ def parameter_parser():
     parser.add_argument('--lamb',
                         type = float,
                         default = 0.01,
-	                help = 'Trade-off parameter. Default is 0.7.')
+	                help = 'Regularization parameter. Default is 0.01.')
 
     parser.add_argument('--layers',
                         nargs='+',
