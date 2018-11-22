@@ -1,7 +1,7 @@
 DANMF
 ============================================
 <p align="justify">
-A sparsity aware implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018). Attributed network embedding enables joint representation learning of node links and attributes. Existing attributed network embedding models are designed in continuous Euclidean spaces which often introduce data redundancy and impose challenges to storage and computation costs. To this end, we present a Binarized Attributed Network Embedding model (BANE for short) to learn binary node representation. Specifically, we define a new Weisfeiler-Lehman proximity matrix to capture data dependence between node links and attributes by aggregating the information of node attributes and links from neighboring nodes to a given target node in a layer-wise manner. Based on the Weisfeiler-Lehman proximity matrix, we formulate a new Weisfiler-Lehman matrix factorization learning function under the binary node representation constraint. The learning problem is a mixed integer optimization and an efficient cyclic coordinate descent (CCD) algorithm is used as the solution. Node classification and link prediction experiments on real-world datasets show that the proposed BANE model outperforms the state-of-the-art network embedding methods.</p>
+A sparsity aware implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018). Community structure is ubiquitous in real-world complex networks. The task of community detection over these networks is of paramount importance in a variety of applications. Recently, nonnegative matrix factorization (NMF) has been widely adopted for community detection due to its great interpretability and its natural fitness for capturing the community membership of nodes. However, the existing NMF-based community detection approaches are shallow methods. They learn the community assignment by mapping the original network to the community membership space directly. Considering the complicated and diversified topology structures of real-world networks, it is highly possible that the mapping between the original network and the community membership space contains rather complex hierarchical information, which cannot be interpreted by classic shallow NMF-based approaches. Inspired by the unique feature representation learning capability of deep autoencoder, we propose a novel model, named Deep Autoencoder-like NMF (DANMF), for community detection. Similar to deep autoencoder, DANMF consists of an encoder component and a decoder component. This architecture empowers DANMF to learn the hierarchical mappings between the original network and the final community  assignment  with  implicit  low-to-high  level  hidden attributes of the original network learnt in the intermediate layers. Thus, DANMF should be better suited to the community detection task. Extensive experiments on benchmark datasets demonstrate that DANMF can achieve better performance than the state-of-the-art NMF-based community detection approaches.</p>
 <div style="text-align:center"><img src ="danmf.jpeg" ,width=420/></div>
 
 This repository provides an implementation for DANMF as described in the paper:
@@ -28,29 +28,6 @@ sklearn           0.20.0
 ### Datasets
 
 The code takes an input graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. Sample graphs for the `Twitch Brasilians` ,`Wikipedia Chameleons` and `Wikipedia Giraffes` are included in the  `input/` directory. 
-
-The feature matrix can be stored two ways:
-
-If the feature matrix is a **sparse binary** one it is stored as a json. Nodes are keys of the json and features are the values. For each node feature column ids are stored as elements of a list. The feature matrix is structured as:
-
-```javascript
-{ 0: [0, 1, 38, 1968, 2000, 52727],
-  1: [10000, 20, 3],
-  2: [],
-  ...
-  n: [2018, 10000]}
-```
-If the feature matrix is **dense** it is assumed that it is stored as csv with comma separators. It has a header, the first column contains node identifiers and it is sorted by these identifers. It should look like this:
-
-| **NODE ID**| **Feature 1** | **Feature 2** | **Feature 3** | **Feature 4** |
-| --- | --- | --- | --- |--- |
-| 0 | 3 |0 |1.37 |1 |
-| 1 | 1 |1 |2.54 |-11 |
-| 2 | 2 |0 |1.08 |-12 |
-| 3 | 1 |1 |1.22 |-4 |
-| ... | ... |... |... |... |
-| n | 5 |0 |2.47 |21 |
-
 
 ### Options
 
