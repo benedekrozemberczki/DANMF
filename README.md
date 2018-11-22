@@ -47,11 +47,11 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 
 ```
   --pre-training-method   STR         Layer pre-training method.            Default is `shallow`. 
-  --iterations            INT         Number of epochs.                     Default is 48.
-  --pre-iterations        INT         Layer-wise epochs.                    Default is 1.
-  --seed                  INT         Random seed value.                    Default is 10.
-  --lamb                  FLOAT       Regularization parameter.             Default is 5.
-  --layers                LST         Layer sizes in autoencoder model.     Have to be set manually.
+  --iterations            INT         Number of epochs.                     Default is 100.
+  --pre-iterations        INT         Layer-wise epochs.                    Default is 100.
+  --seed                  INT         Random seed value.                    Default is 42.
+  --lamb                  FLOAT       Regularization parameter.             Default is 0.01.
+  --layers                LST         Layer sizes in autoencoder model.     Default is [32, 8]
   --calculate-loss        BOOL        Loss calculation for the model.       Default is False.  
 ```
 
@@ -63,9 +63,9 @@ Creating a DANMF embedding of the default dataset with a 128-64-32-16 architectu
 ```
 python src/main.py --layers 128 64 32 16
 ```
-Creating a BANE embedding of the default dataset with a 32-8 architecture and calculationg the loss.
+Creating a DANMF embedding of the default dataset with a 96-8 architecture and calculationg the loss.
 ```
-python src/main.py --layers 32 8 --calculate-loss
+python src/main.py --layers 96 8 --calculate-loss
 ```
 Creating a single layer DANMF embedding with 32 factors.
 ```
