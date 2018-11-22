@@ -22,7 +22,6 @@ def tab_printer(args):
     t.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
     print(t.draw())
 
-
 def loss_printer(losses):
     """
     Printing the losses for each iteration.
