@@ -38,21 +38,21 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 #### Input and output options
 
 ```
-  --edge-path    STR     Input graph path.           Default is `input/ptbr_edges.csv`.
-  --membership-path STR     Input Features path.        Default is `input/ptbr_features.json`.
-  --output-path  STR     Embedding path.             Default is `output/ptbr_bane.csv`.
+  --edge-path         STR    Input graph path.       Default is `input/ptbr_edges.csv`.
+  --membership-path   STR    Membership path.        Default is `output/ptbr_membership.json`.
+  --output-path       STR    Embedding path.         Default is `output/ptbr_danmf.csv`.
 ```
 
 #### Model options
 
 ```
-  --pre-training-method               STR         Structure of the feature matrix.       Default is `sparse`. 
-  --iterations             INT         Number of embeding dimensions.         Default is 48.
-  --pre-iterations                  INT         Order of adjacency matrix powers.      Default is 1.
-  --seed    INT         Number of power interations.           Default is 10.
-  --lamb   INT         Number of CDC interations.             Default is 5.
-  --layers                  FLOAT       Regularization parameter.              Default is 0.7.
-  --calculate-loss                  FLOAT       Weisfeiler-Lehman mixing parameter.    Default is 0.1.  
+  --pre-training-method   STR         Structure of the feature matrix.       Default is `sparse`. 
+  --iterations            INT         Number of embeding dimensions.         Default is 48.
+  --pre-iterations        INT         Order of adjacency matrix powers.      Default is 1.
+  --seed                  INT         Number of power interations.           Default is 10.
+  --lamb                  INT         Number of CDC interations.             Default is 5.
+  --layers                FLOAT       Regularization parameter.              Default is 0.7.
+  --calculate-loss        FLOAT       Weisfeiler-Lehman mixing parameter.    Default is 0.1.  
 ```
 
 ### Examples
