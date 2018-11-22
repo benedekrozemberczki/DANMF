@@ -1,7 +1,6 @@
 DANMF
 ============================================
-
-A light weight implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
+A simple implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
 
 <div style="text-align:center"><img src ="danmf.jpg" ,width=720/></div>
 <p align="justify">
