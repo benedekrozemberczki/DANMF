@@ -3,8 +3,6 @@ import networkx as nx
 from scipy import sparse
 from tqdm import tqdm
 
-
-
 class ShallowNMF(object):
     
     def __init__(self, X, dimensions, iterations):
@@ -35,4 +33,3 @@ class ShallowNMF(object):
         for i in tqdm(range(self.iterations),desc="Layer training round: "):
             self.update_U()
             self.update_V()
-
