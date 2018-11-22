@@ -46,40 +46,40 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 #### Model options
 
 ```
-  --pre-training-method   STR         Structure of the feature matrix.       Default is `sparse`. 
-  --iterations            INT         Number of embeding dimensions.         Default is 48.
-  --pre-iterations        INT         Order of adjacency matrix powers.      Default is 1.
-  --seed                  INT         Number of power interations.           Default is 10.
-  --lamb                  INT         Number of CDC interations.             Default is 5.
-  --layers                FLOAT       Regularization parameter.              Default is 0.7.
-  --calculate-loss        FLOAT       Weisfeiler-Lehman mixing parameter.    Default is 0.1.  
+  --pre-training-method   STR         Layer pre-training method.            Default is `shallow`. 
+  --iterations            INT         Number of epochs.                     Default is 48.
+  --pre-iterations        INT         Layer-wise epochs.                    Default is 1.
+  --seed                  INT         Random seed value.                    Default is 10.
+  --lamb                  FLOAT       Regularization parameter.             Default is 5.
+  --layers                LST         Layer sizes in autoencoder model.     Have to be set manually.
+  --calculate-loss        BOOL        Loss calculation for the model.       Default is False.  
 ```
 
 ### Examples
 
-The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID.
+The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID. The layer sizes are always set manually.
 
-Creating a BANE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
+Creating a DANMF embedding of the default dataset with a 128-64-32-16 architecture. Saving the embedding at the default path.
 ```
 python src/main.py --layers 128 64 32 16
 ```
-Creating a BANE embedding of the default dataset with 128 dimensions and approximation order 1.
+Creating a BANE embedding of the default dataset with a 32-8 architecture and calculationg the loss.
 ```
 python src/main.py --layers 32 8 --calculate-loss
 ```
-Creating a BANE embedding of the default dataset with asymmetric mixing.
+Creating a single layer DANMF embedding with 32 factors.
 ```
 python src/main.py --layers 32
 ```
-Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+Creating an embedding with some custom cluster number in the bottleneck layer.
 ```
 python src/main.py --layers 128 64 7
 ```
-Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+Creating an embedding of the default dataset with a 32-8 architecture and sklearn layer pre-training.
 ```
 python src/main.py --layers 32 4 --pre-training-method sklearn
 ```
-Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the output in a custom folder.
 ```
 python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
 ```
