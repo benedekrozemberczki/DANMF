@@ -39,20 +39,20 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 
 ```
   --edge-path    STR     Input graph path.           Default is `input/ptbr_edges.csv`.
-  --feature-path STR     Input Features path.        Default is `input/ptbr_features.json`.
+  --membership-path STR     Input Features path.        Default is `input/ptbr_features.json`.
   --output-path  STR     Embedding path.             Default is `output/ptbr_bane.csv`.
 ```
 
 #### Model options
 
 ```
-  --features               STR         Structure of the feature matrix.       Default is `sparse`. 
-  --dimensions             INT         Number of embeding dimensions.         Default is 48.
-  --order                  INT         Order of adjacency matrix powers.      Default is 1.
-  --binarization-rounds    INT         Number of power interations.           Default is 10.
-  --approximation-rounds   INT         Number of CDC interations.             Default is 5.
-  --alpha                  FLOAT       Regularization parameter.              Default is 0.7.
-  --gamma                  FLOAT       Weisfeiler-Lehman mixing parameter.    Default is 0.1.  
+  --pre-training-method               STR         Structure of the feature matrix.       Default is `sparse`. 
+  --iterations             INT         Number of embeding dimensions.         Default is 48.
+  --pre-iterations                  INT         Order of adjacency matrix powers.      Default is 1.
+  --seed    INT         Number of power interations.           Default is 10.
+  --lamb   INT         Number of CDC interations.             Default is 5.
+  --layers                  FLOAT       Regularization parameter.              Default is 0.7.
+  --calculate-loss                  FLOAT       Weisfeiler-Lehman mixing parameter.    Default is 0.1.  
 ```
 
 ### Examples
@@ -60,25 +60,26 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID.
 
 Creating a BANE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
-
 ```
-python src/main.py
+python src/main.py --layers 128 64 32 16
 ```
 Creating a BANE embedding of the default dataset with 128 dimensions and approximation order 1.
-
 ```
-python src/main.py --dimensions 128 --order 1
+python src/main.py --layers 32 8 --calculate-loss
 ```
-
 Creating a BANE embedding of the default dataset with asymmetric mixing.
-
 ```
-python src/main.py --gamma 0.1
+python src/main.py --layers 32
 ```
-
 Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
-
 ```
-python src/main.py --edge-path input/giraffe_edges.csv --feature-path input/giraffe_features.csv --output-path output/giraffe_bane.csv --features dense
+python src/main.py --layers 128 64 7
 ```
-
+Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+```
+python src/main.py --layers 32 4 --pre-training-method sklearn
+```
+Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+```
+python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
+```
