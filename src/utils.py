@@ -1,9 +1,5 @@
-import json
-import numpy as np
 import pandas as pd
 import networkx as nx
-from tqdm import tqdm
-from scipy import sparse
 from texttable import Texttable
 
 def read_graph(args):
@@ -28,8 +24,10 @@ def tab_printer(args):
 
 
 def loss_printer(losses):
+    """
+    Printing the losses for each iteration.
+    :param losses: List of losses in each iteration.
+    """
     t = Texttable() 
     t.add_rows([["Iteration","Reconstrcution Loss I.","Reconstruction Loss II.","Regularization Loss"]] +  losses)
     print(t.draw())
-
-
