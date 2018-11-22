@@ -66,4 +66,3 @@ def parameter_parser():
     parser.set_defaults(calculate_loss=False)
     
     return parser.parse_args()
-
