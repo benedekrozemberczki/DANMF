@@ -64,5 +64,7 @@ def parameter_parser():
                         action='store_false')
 
     parser.set_defaults(calculate_loss=False)
+	
+    parser.set_defaults(layers=[32, 8])
     
     return parser.parse_args()
