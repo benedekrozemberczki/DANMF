@@ -13,7 +13,7 @@ class DANMF(object):
     """
     def __init__(self, graph, args):
         """
-        
+        Initializing a DANMF object.
         :param graph: Networkx graph.
         :param args: Arguments object.
         """
