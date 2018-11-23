@@ -8,8 +8,15 @@ from shallownmf import ShallowNMF
 from sklearn.decomposition import NMF
 
 class DANMF(object):
-       
+    """
+    Deep autoencoder-like non-negative matrix factorization class.
+    """
     def __init__(self, graph, args):
+        """
+        
+        :param graph: Networkx graph.
+        :param args: Arguments object.
+        """
         self.graph = graph
         self.A = nx.adjacency_matrix(self.graph)
         self.L = nx.laplacian_matrix(self.graph)
