@@ -15,7 +15,5 @@ def main():
     if args.calculate_loss: 
         loss_printer(model.loss)
 
-
 if __name__ =="__main__":
     main()
-
