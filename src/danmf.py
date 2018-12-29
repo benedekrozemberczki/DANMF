@@ -38,7 +38,7 @@ class DANMF(object):
         Pretraining a single layer of the model with sklearn.
         :param i: Layer index.
         """
-        nmf_model = NMF(n_components= self.args.layers[i], init='random', random_state=self.args.seed, max_iter = self.args.pre_iterations)
+        nmf_model = NMF(n_components= self.args.layers[i], init="random", random_state=self.args.seed, max_iter = self.args.pre_iterations)
         U = nmf_model.fit_transform(self.Z)
         V = nmf_model.components_
         return U, V
@@ -56,14 +56,14 @@ class DANMF(object):
         """
         Pre-training each NMF layer.
         """
-        print('\nLayer pre-training started. \n')
+        print("\nLayer pre-training started. \n")
         self.U_s = []
         self.V_s = []
-        for i in tqdm(range(self.p), desc='Layers trained: ', leave=True):
+        for i in tqdm(range(self.p), desc="Layers trained: ", leave=True):
             self.setup_z(i)
-            if self.args.pre_training_method == 'sklearn':
+            if self.args.pre_training_method == "sklearn":
                 U, V = self.sklearn_pretrain(i)
-            elif self.args.pre_training_method == 'shallow':
+            elif self.args.pre_training_method == "shallow":
                 U, V = self.general_pretrain(i)
             self.U_s.append(U)
             self.V_s.append(V)
@@ -121,8 +121,8 @@ class DANMF(object):
         Calculate loss.
         :param i: Global iteration.
         """
-        reconstruction_loss_1 = np.linalg.norm(self.A-self.P.dot(self.V_s[-1]),ord= 'fro')**2
-        reconstruction_loss_2 = np.linalg.norm(self.V_s[-1]-self.A.dot(self.P).T,ord= 'fro')**2
+        reconstruction_loss_1 = np.linalg.norm(self.A-self.P.dot(self.V_s[-1]),ord= "fro")**2
+        reconstruction_loss_2 = np.linalg.norm(self.V_s[-1]-self.A.dot(self.P).T,ord= "fro")**2
         regularization_loss = np.trace(self.V_s[-1].dot(self.L.dot(self.V_s[-1].T)))
         self.loss.append([i+1, reconstruction_loss_1,reconstruction_loss_2,regularization_loss])
 
@@ -148,10 +148,10 @@ class DANMF(object):
         """
         Training process after pre-training.
         """
-        print('\n\nTraining started. \n')
+        print("\n\nTraining started. \n")
         self.loss = []
         self.A_sq = self.A.dot(self.A.T)
-        for iteration in tqdm(range(self.args.iterations), desc='Training pass: ', leave = True):
+        for iteration in tqdm(range(self.args.iterations), desc="Training pass: ", leave = True):
             self.setup_Q()
             self.VpVpT = self.V_s[self.p-1].dot(self.V_s[self.p-1].T)
             for i in range(self.p):
