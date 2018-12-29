@@ -6,9 +6,7 @@ def parameter_parser():
     The default hyperparameters give a good quality representation without grid search.
     Representations are sorted by node ID.
     """
-
-    parser = argparse.ArgumentParser(description = "Run BANE.")
-
+    parser = argparse.ArgumentParser(description = "Run DANMF.")
 
     parser.add_argument("--edge-path",
                         nargs = "?",
