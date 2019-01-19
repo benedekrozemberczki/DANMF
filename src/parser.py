@@ -4,7 +4,7 @@ def parameter_parser():
     """
     A method to parse up command line parameters. By default it gives an embedding of the Twitch Brasilians dataset.
     The default hyperparameters give a good quality representation without grid search.
-    Representations are sorted by node ID.
+    Representations are sorted by node identifiers.
     """
     parser = argparse.ArgumentParser(description = "Run DANMF.")
 
