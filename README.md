@@ -57,7 +57,7 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 
 ### Examples
 
-The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID. The layer sizes are always set manually.
+The following commands learn a graph embedding and write this embedding to disk. The node representations are ordered by node identifiers. Layer sizes are always set manually.
 
 Creating a DANMF embedding of the default dataset with a 128-64-32-16 architecture. Saving the embedding at the default path.
 ```
@@ -77,7 +77,7 @@ python src/main.py --layers 128 64 7
 ```
 Creating an embedding of the default dataset with a 32-8 architecture and sklearn layer pre-training.
 ```
-python src/main.py --layers 32 4 --pre-training-method sklearn
+python src/main.py --layers 32 8 --pre-training-method sklearn
 ```
 Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the output in a custom folder.
 ```
