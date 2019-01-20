@@ -85,11 +85,11 @@ class DANMF(object):
         if i == 0:
             R = self.U_s[0].dot(self.Q_s[1].dot(self.VpVpT).dot(self.Q_s[1].T))+self.A_sq.dot(self.U_s[0].dot(self.Q_s[1].dot(self.Q_s[1].T)))
             Ru = 2*self.A.dot(self.V_s[self.p-1].T.dot(self.Q_s[1].T))
-            self.U_s[0] = (self.U_s[0]*Ru)/np.maximum(R,0.1)
+            self.U_s[0] = (self.U_s[0]*Ru)/np.maximum(R,10**-10)
         else:
             R = self.P.T.dot(self.P).dot(self.U_s[i]).dot(self.Q_s[i+1]).dot(self.VpVpT).dot(self.Q_s[i+1].T)+self.A_sq.dot(self.P).T.dot(self.P).dot(self.U_s[i]).dot(self.Q_s[i+1]).dot(self.Q_s[i+1].T)
             Ru = 2*self.A.dot(self.P).T.dot(self.V_s[self.p-1].T).dot(self.Q_s[i+1].T)
-            self.U_s[i] = (self.U_s[i]*Ru)/np.maximum(R,0.1)
+            self.U_s[i] = (self.U_s[i]*Ru)/np.maximum(R,10**-10)
 
     def update_P(self,i):
         """
@@ -109,11 +109,11 @@ class DANMF(object):
         if (i < self.p-1):
             Vu = 2*self.A.dot(self.P).T
             Vd = self.P.T.dot(self.P).dot(self.V_s[i])+self.V_s[i]
-            self.V_s[i] = self.V_s[i] * Vu/np.maximum(Vd,0.1)
+            self.V_s[i] = self.V_s[i] * Vu/np.maximum(Vd,10**-10)
         else:
             Vu = 2*self.A.dot(self.P).T+(self.args.lamb*self.A.dot(self.V_s[i].T)).T
             Vd = self.P.T.dot(self.P).dot(self.V_s[i])+self.V_s[i]+(self.args.lamb*self.D.dot(self.V_s[i].T)).T
-            self.V_s[i] = self.V_s[i] * Vu/np.maximum(Vd,0.1)
+            self.V_s[i] = self.V_s[i] * Vu/np.maximum(Vd,10**-10)
 
 
     def calculate_cost(self, i):
