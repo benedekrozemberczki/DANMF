@@ -1,6 +1,6 @@
 DANMF 	<img src="https://img.shields.io/badge/stars-70+-blue.svg"/>
         <img src="https://img.shields.io/badge/forks-10+-blue.svg"/>
-	<img src="https://img.shields.io/badge/license-CC0-blue.svg"/>
+	<img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
 ============================================
 An implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
 
