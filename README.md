@@ -1,6 +1,8 @@
-DANMF
+DANMF 	<img src="https://img.shields.io/badge/stars-70+-blue.svg"/>
+        <img src="https://img.shields.io/badge/forks-10+-blue.svg"/>
+	<img src="https://img.shields.io/badge/license-CC0-blue.svg"/>
 ============================================
-A simple implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
+An implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
 
 <div style="text-align:center"><img src ="danmf.jpg" ,width=720/></div>
 <p align="justify">
