@@ -1,4 +1,4 @@
-DANMF 	<img src="https://img.shields.io/badge/stars-70+-blue.svg"/>
+DANMF 	<img src="https://img.shields.io/badge/stars-80+-blue.svg"/>
         <img src="https://img.shields.io/badge/forks-10+-blue.svg"/>
 	<img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
 ============================================
