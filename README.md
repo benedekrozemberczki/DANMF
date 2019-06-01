@@ -15,6 +15,8 @@ This repository provides an implementation for DANMF as described in the paper:
 > CIKM, 2018.
 > [[Paper]](https://smartyfh.com/Documents/18DANMF.pdf)
 
+A MatLab reference implementation is available [[here]](https://github.com/smartyfh/DANMF).
+
 
 ### Requirements
 
