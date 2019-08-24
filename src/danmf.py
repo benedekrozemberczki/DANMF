@@ -115,7 +115,6 @@ class DANMF(object):
             Vd = self.P.T.dot(self.P).dot(self.V_s[i])+self.V_s[i]+(self.args.lamb*self.D.dot(self.V_s[i].T)).T
             self.V_s[i] = self.V_s[i] * Vu/np.maximum(Vd,10**-10)
 
-
     def calculate_cost(self, i):
         """
         Calculate loss.
