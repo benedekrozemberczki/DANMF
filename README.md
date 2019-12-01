@@ -33,12 +33,12 @@ argparse          1.1.0
 sklearn           0.20.0
 ```
 ### Datasets
-
-The code takes an input graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. Sample graphs for the `Twitch Brasilians` ,`Wikipedia Chameleons` and `Wikipedia Giraffes` are included in the  `input/` directory. 
+<p align="justify">
+The code takes an input graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. Sample graphs for the `Twitch Brasilians` ,`Wikipedia Chameleons` and `Wikipedia Giraffes` are included in the  `input/` directory. </p>
 
 ### Options
-
-Learning of the embedding is handled by the `src/main.py` script which provides the following command line arguments.
+<p align="justify">
+Learning of the embedding is handled by the `src/main.py` script which provides the following command line arguments.</p>
 
 #### Input and output options
 
@@ -61,10 +61,10 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 ```
 
 ### Examples
-
-The following commands learn a graph embedding and write this embedding to disk. The node representations are ordered by node identifiers. Layer sizes are always set manually.
-
-Creating a DANMF embedding of the default dataset with a 128-64-32-16 architecture. Saving the embedding at the default path.
+<p align="justify">
+The following commands learn a graph embedding and write this embedding to disk. The node representations are ordered by node identifiers. Layer sizes are always set manually.</p>
+<p align="justify">
+Creating a DANMF embedding of the default dataset with a 128-64-32-16 architecture. Saving the embedding at the default path.</p>
 ```
 python src/main.py --layers 128 64 32 16
 ```
