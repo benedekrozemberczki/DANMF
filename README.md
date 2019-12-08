@@ -81,10 +81,6 @@ Creating an embedding with some custom cluster number in the bottleneck layer.
 ```
 python src/main.py --layers 128 64 7
 ```
-Creating an embedding of the default dataset with a 32-8 architecture and sklearn layer pre-training.
-```
-python src/main.py --layers 32 8 --pre-training-method sklearn
-```
 Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the output in a custom folder.
 ```
 python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
