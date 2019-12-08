@@ -57,6 +57,7 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
   --seed                  INT         Random seed value.                    Default is 42.
   --lamb                  FLOAT       Regularization parameter.             Default is 0.01.
   --layers                LST         Layer sizes in autoencoder model.     Default is [32, 8]
+  --calculate-loss        BOOL        Loss calculation for the model.       Default is False. 
 ```
 
 ### Examples
