@@ -51,7 +51,6 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 #### Model options
 
 ```
-  --pre-training-method   STR         Layer pre-training method.            Default is `shallow`. 
   --iterations            INT         Number of epochs.                     Default is 100.
   --pre-iterations        INT         Layer-wise epochs.                    Default is 100.
   --seed                  INT         Random seed value.                    Default is 42.
