@@ -1,10 +1,12 @@
+"""Data reading utilities."""
+
 import pandas as pd
 import networkx as nx
 from texttable import Texttable
 
 def read_graph(args):
     """
-    Method to read graph and create a target matrix with pooled adjacency matrix powers up to the order.
+    Method to read graph and create a target matrix with matrix powers.
     :param args: Arguments object.
     """
     print("\nTarget matrix creation started.\n")
@@ -18,8 +20,9 @@ def tab_printer(args):
     """
     args = vars(args)
     keys = sorted(args.keys())
-    t = Texttable() 
-    t.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
+    t = Texttable()
+    t.add_rows([["Parameter", "Value"]])
+    t.add_rows([[k.replace("_", " ").capitalize(), args[k]] for k in keys])
     print(t.draw())
 
 def loss_printer(losses):
@@ -27,6 +30,10 @@ def loss_printer(losses):
     Printing the losses for each iteration.
     :param losses: List of losses in each iteration.
     """
-    t = Texttable() 
-    t.add_rows([["Iteration","Reconstrcution Loss I.","Reconstruction Loss II.","Regularization Loss"]] +  losses)
+    t = Texttable()
+    t.add_rows([["Iteration",
+                 "Reconstrcution Loss I.",
+                 "Reconstruction Loss II.",
+                 "Regularization Loss"]])
+    t.add_rows(losses)
     print(t.draw())

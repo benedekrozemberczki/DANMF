@@ -1,3 +1,5 @@
+"""Fitting a DANMF model."""
+
 from danmf import DANMF
 from parser import parameter_parser
 from utils import read_graph, tab_printer, loss_printer
@@ -12,8 +14,8 @@ def main():
     model = DANMF(graph, args)
     model.pre_training()
     model.training()
-    if args.calculate_loss: 
+    if args.calculate_loss:
         loss_printer(model.loss)
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     main()
