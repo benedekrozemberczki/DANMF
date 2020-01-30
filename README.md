@@ -67,22 +67,22 @@ The following commands learn a graph embedding and write this embedding to disk.
 <p align="justify">
 Creating a DANMF embedding of the default dataset with a 128-64-32-16 architecture. Saving the embedding at the default path.</p>
 
-```
+```sh
 python src/main.py --layers 128 64 32 16
 ```
 Creating a DANMF embedding of the default dataset with a 96-8 architecture and calculationg the loss.
-```
+```sh
 python src/main.py --layers 96 8 --calculate-loss
 ```
 Creating a single layer DANMF embedding with 32 factors.
-```
+```sh
 python src/main.py --layers 32
 ```
 Creating an embedding with some custom cluster number in the bottleneck layer.
-```
+```sh
 python src/main.py --layers 128 64 7
 ```
 Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the output in a custom folder.
-```
+```sh
 python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
 ```
