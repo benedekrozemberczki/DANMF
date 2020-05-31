@@ -1,4 +1,4 @@
-DANMF ![License](https://img.shields.io/github/license/benedekrozemberczki/DANMF.svg?color=blue&style=plastic)
+DANMF ![License](https://img.shields.io/github/license/benedekrozemberczki/DANMF.svg?color=blue&style=plastic) [![codebeat badge](https://codebeat.co/badges/df34c5ab-3e5b-4272-99d7-d4587685604f)](https://codebeat.co/projects/github-com-benedekrozemberczki-danmf-master)
 ============================================
 An implementation of "Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection" (CIKM 2018).
 
