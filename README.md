@@ -1,6 +1,6 @@
 DANMF
 ============================================
-![License](https://img.shields.io/github/license/benedekrozemberczki/DANMF.svg?color=blue&style=plastic) [![codebeat badge](https://codebeat.co/badges/df34c5ab-3e5b-4272-99d7-d4587685604f)](https://codebeat.co/projects/github-com-benedekrozemberczki-danmf-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/DANMF.svg)](https://github.com/benedekrozemberczki/DANMF/archive/master.zip)
+[![codebeat badge](https://codebeat.co/badges/df34c5ab-3e5b-4272-99d7-d4587685604f)](https://codebeat.co/projects/github-com-benedekrozemberczki-danmf-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/DANMF.svg)](https://github.com/benedekrozemberczki/DANMF/archive/master.zip)
 
 An implementation of **Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection (CIKM 2018).**
 
@@ -88,3 +88,8 @@ Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the 
 ```sh
 python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
 ```
+--------------------------------------------------------------------------------
+
+**License**
+
+- [GNU License](https://github.com/benedekrozemberczki/DANMF/blob/master/LICENSE)
