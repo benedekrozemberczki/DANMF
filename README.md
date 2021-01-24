@@ -1,6 +1,6 @@
 DANMF
 ============================================
-[![codebeat badge](https://codebeat.co/badges/df34c5ab-3e5b-4272-99d7-d4587685604f)](https://codebeat.co/projects/github-com-benedekrozemberczki-danmf-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/DANMF.svg)](https://github.com/benedekrozemberczki/DANMF/archive/master.zip)
+[![codebeat badge](https://codebeat.co/badges/df34c5ab-3e5b-4272-99d7-d4587685604f)](https://codebeat.co/projects/github-com-benedekrozemberczki-danmf-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/DANMF.svg)](https://github.com/benedekrozemberczki/DANMF/archive/master.zip)⠀
 
 An implementation of **Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection (CIKM 2018).**
 
