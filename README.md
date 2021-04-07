@@ -13,7 +13,7 @@ Community structure is ubiquitous in real-world complex networks. The task of co
 
 The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
 
-This repository provides an implementation for DANMF as described in the paper:
+This repository provides an implementation for **0DANMF** as described in the paper:
 
 > Deep Autoencoder-like Nonnegative Matrix Factorization for Community Detection.
 > Fanghua Ye, Chuan Chen, and Zibin Zheng.
