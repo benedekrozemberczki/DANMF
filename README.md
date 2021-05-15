@@ -93,3 +93,5 @@ python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-
 **License**
 
 - [GNU License](https://github.com/benedekrozemberczki/DANMF/blob/master/LICENSE)
+
+--------------------------------------------------------------------------------
