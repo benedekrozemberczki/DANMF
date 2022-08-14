@@ -88,7 +88,7 @@ Creating an embedding of another dataset the `Wikipedia Chameleons`. Saving the 
 ```sh
 python src/main.py --layers 32 8 --edge-path input/chameleon_edges.csv --output-path output/chameleon_danmf.csv --membership-path output/chameleon_membership.json
 ```
-----------------------------------------------------------
+-----------------------------------------------------
 
 **License**
 
